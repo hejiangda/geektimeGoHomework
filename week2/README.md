@@ -10,7 +10,7 @@
 程序输出结果：
 
 ```
-[{sam 1}]
+{sam 1}
 2021/12/11 20:03:53 Query Id:2 not found!: sql: no rows in result set
 exit status 1
 ```
