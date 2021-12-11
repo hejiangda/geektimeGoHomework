@@ -18,7 +18,7 @@ type Dao struct {
 }
 
 // 通过用户id获取用户名
-func (d *Dao) GetUserById(id int) (user []User, err error) {
+func (d *Dao) GetUserById(id int) (user User, err error) {
 
 	result := d.DB.QueryRow("SELECT name FROM user WHERE id=" + fmt.Sprint(id) + "")
 	if err != nil {
@@ -34,11 +34,8 @@ func (d *Dao) GetUserById(id int) (user []User, err error) {
 		return user, errors.Wrap(err, "Query Id:"+fmt.Sprint(id))
 	}
 	// 保存用户数据
-	var tmp User
-	tmp.Id = id
-	tmp.Name = name
-	user = append(user, tmp)
-
+	user.Id = id
+	user.Name = name
 	return
 }
 func main() {
