@@ -10,5 +10,6 @@
    3. length field based frame decoder 数据头+数据正文
     在数据头中存储数据正文的大小，当读取的数据小于数据头中的大小时，继续读取数据，直到读取的数据长度等于数据头中的长度时才停止。适合知道要发送的数据长度的情况。
    
+
 2. 实现一个从 socket connection 中解码出 goim 协议的解码器。
-   1. 
+   1. 在decode中，参考 https://github.com/87170360/homework-8/blob/main/main.go
